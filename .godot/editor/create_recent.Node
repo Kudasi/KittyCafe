@@ -1,8 +1,13 @@
+MeshInstance3D
+CollisionShape3D
+RigidBody3D
+StaticBody3D
+HingeJoint3D
+NavigationAgent3D
 Node3D
 Camera3D
 Marker3D
 AnimationTree
 AnimationPlayer
-CollisionShape3D
 CharacterBody3D
 Sprite3D

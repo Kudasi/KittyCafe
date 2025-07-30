@@ -419,3 +419,5 @@ parameters/Idle/blend_position = Vector2(0, 0)
 
 [node name="Marker3D" type="Marker3D" parent="."]
 gizmo_extents = 3.0
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
