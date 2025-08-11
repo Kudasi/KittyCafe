@@ -1,4 +1,6 @@
 res://scenes/main.tscn
-res://scenes/main.gd
+res://assets/materials/outline.tres
+res://assets/materials/restaurant.tres
 res://scenes/orange_cat.tscn
-res://scenes/cat.gd
+res://scenes/furniture/door_blue.tscn
+res://scripts/camera_controller.gd

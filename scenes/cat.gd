@@ -12,5 +12,3 @@ func _process(delta: float) -> void:
 	
 	$AnimationTree.set("parameters/Idle/blend_position", projected_camera)
 	
-	print(projected_camera)
-	

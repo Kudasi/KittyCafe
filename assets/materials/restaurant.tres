@@ -1,0 +1,29 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://b6fvttr7ghh3y"]
+
+[ext_resource type="Material" uid="uid://doj6cenna2ypb" path="res://assets/materials/outline.tres" id="1_ci7ll"]
+[ext_resource type="Texture2D" uid="uid://cyow05k0jidqm" path="res://assets/gltf/restaurantbits_texture.png" id="1_f25ut"]
+
+[sub_resource type="Shader" id="Shader_f25ut"]
+code = "// NOTE: Shader automatically converted from Godot Engine 4.4.1.stable's StandardMaterial3D.
+
+shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_toon, specular_disabled;
+
+uniform sampler2D texture_albedo : source_color, filter_linear_mipmap, repeat_enable;
+
+
+void fragment() {
+	ALBEDO = texture(texture_albedo, UV).rgb;
+
+	METALLIC = 0.0;
+	SPECULAR = 0.0;
+	ROUGHNESS = 0.0;
+}
+"
+
+[resource]
+resource_name = "restaurant"
+render_priority = 0
+next_pass = ExtResource("1_ci7ll")
+shader = SubResource("Shader_f25ut")
+shader_parameter/texture_albedo = ExtResource("1_f25ut")

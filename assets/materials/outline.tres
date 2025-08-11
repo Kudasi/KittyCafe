@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://doj6cenna2ypb"]
+
+[sub_resource type="Shader" id="Shader_jka8m"]
+code = "shader_type spatial;
+render_mode unshaded, cull_front;
+
+void vertex() {
+	
+}
+
+void fragment() {
+	ALBEDO = vec3(0.0);
+}"
+
+[resource]
+render_priority = 0
+shader = SubResource("Shader_jka8m")
