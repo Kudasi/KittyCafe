@@ -3,4 +3,4 @@ res://assets/materials/outline.tres
 res://assets/materials/restaurant.tres
 res://scenes/orange_cat.tscn
 res://scenes/furniture/door_blue.tscn
-res://scripts/camera_controller.gd
+res://scenes/main.gd

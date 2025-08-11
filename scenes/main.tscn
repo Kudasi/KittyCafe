@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://wgsfkg5lt62s"]
+[gd_scene load_steps=16 format=3 uid="uid://wgsfkg5lt62s"]
 
 [ext_resource type="PackedScene" uid="uid://deb037msrscsh" path="res://assets/gltf/floor_kitchen.gltf" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://hx3i1b1p48ay" path="res://scenes/main.gd" id="1_sugp2"]
@@ -13,10 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://bu1cov513rdha" path="res://assets/gltf/chair_A.gltf" id="10_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://cqt7fuw22nomg" path="res://assets/gltf/toilet.glb" id="12_jbj1t"]
 [ext_resource type="Script" uid="uid://btjlb0j6bq1cf" path="res://scripts/camera_controller.gd" id="13_trceg"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_eb6dy"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_trceg"]
 
 [sub_resource type="Environment" id="Environment_trceg"]
 ambient_light_source = 2
@@ -487,17 +483,6 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.7, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0.68, 0)
 metadata/_edit_lock_ = true
 
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -12)
-linear_velocity = Vector3(0, 0, -12)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-shape = SubResource("SphereShape3D_eb6dy")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
-mesh = SubResource("SphereMesh_trceg")
-
 [node name="CameraOrigin" type="Node3D" parent="."]
 
 [node name="CameraAnchor" type="Node3D" parent="CameraOrigin"]
@@ -514,6 +499,9 @@ environment = SubResource("Environment_trceg")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, 0.5, -0.5, 0, 7, -19)
 shadow_enabled = true
+shadow_bias = 0.025
+shadow_blur = 0.5
+directional_shadow_blend_splits = true
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
