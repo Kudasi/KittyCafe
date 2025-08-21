@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://wgsfkg5lt62s"]
+[gd_scene load_steps=18 format=3 uid="uid://wgsfkg5lt62s"]
 
 [ext_resource type="PackedScene" uid="uid://deb037msrscsh" path="res://assets/gltf/floor_kitchen.gltf" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://hx3i1b1p48ay" path="res://scenes/main.gd" id="1_sugp2"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://bu1cov513rdha" path="res://assets/gltf/chair_A.gltf" id="10_jkv2x"]
 [ext_resource type="PackedScene" uid="uid://cqt7fuw22nomg" path="res://assets/gltf/toilet.glb" id="12_jbj1t"]
 [ext_resource type="Script" uid="uid://btjlb0j6bq1cf" path="res://scripts/camera_controller.gd" id="13_trceg"]
+[ext_resource type="Texture2D" uid="uid://bwx1thwb6mus7" path="res://assets/icon.svg" id="14_a8y0u"]
+[ext_resource type="PackedScene" uid="uid://de63qq04nt2bq" path="res://scenes/furniture/kitchen_fridge.tscn" id="15_jkv2x"]
 
 [sub_resource type="Environment" id="Environment_trceg"]
 ambient_light_source = 2
@@ -506,3 +508,33 @@ directional_shadow_blend_splits = true
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 navigation_mesh = SubResource("NavigationMesh_trceg")
+
+[node name="kitchenFridge" parent="." instance=ExtResource("15_jkv2x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -25)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ActionsMenu" type="PanelContainer" parent="CanvasLayer"]
+unique_name_in_owner = true
+anchors_preset = -1
+anchor_right = 0.1736111
+anchor_bottom = 0.30864197
+pivot_offset = Vector2(100, 100)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/ActionsMenu"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="ItemList" type="ItemList" parent="CanvasLayer/ActionsMenu/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+item_count = 2
+fixed_icon_size = Vector2i(32, 32)
+item_0/text = "Element 1"
+item_0/icon = ExtResource("14_a8y0u")
+item_1/text = "Element 2"

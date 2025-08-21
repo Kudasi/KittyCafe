@@ -1,3 +1,9 @@
 res://scenes/furniture/kitchen_fridge.tscn
+res://assets/materials/outline.tres
+res://assets/materials/restaurant.tres
 res://scripts/station.gd
-res://scenes/waiter.tscn
+res://scripts/station_action.gd
+res://scripts/global_dependencies.gd
+res://assets/kenney_game-icons/Vector/default_action_icon.tres
+res://scenes/main.tscn
+res://scenes/main.gd

@@ -1,44 +1,27 @@
-[gd_scene load_steps=6 format=3 uid="uid://bwywphkjgswes"]
+[gd_scene load_steps=4 format=3 uid="uid://de63qq04nt2bq"]
 
 [ext_resource type="PackedScene" uid="uid://ctcws40o6so0t" path="res://assets/gltf/kitchenFridge.glb" id="1_llmst"]
+[ext_resource type="Script" uid="uid://b77ix8y1m25v7" path="res://scripts/station.gd" id="2_aj62v"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_llmst"]
-points = PackedVector3Array(0, 0, -1.12774, 1.72, 0, -1.12774, 0, 0, -0.160098, 0, 3.68, -1.12774, 1.72, 0, -0.160098, 1.72, 3.68, -1.12774, 0, 0.239546, -0.08, 0, 3.68, -0.08, 1.72, 0.239546, -0.08, 1.72, 3.68, -0.08)
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_llmst"]
-viewport_path = NodePath("GUI/SubViewport")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aj62v"]
-resource_local_to_scene = true
-transparency = 2
-alpha_scissor_threshold = 0.5
-alpha_antialiasing_mode = 0
-albedo_texture = SubResource("ViewportTexture_llmst")
-billboard_mode = 1
-fixed_size = true
-
-[sub_resource type="QuadMesh" id="QuadMesh_6uc0x"]
-material = SubResource("StandardMaterial3D_aj62v")
+points = PackedVector3Array(0, 0, -1.1277356, 1.72, 0, -1.1277356, 0, 0, -0.16009808, 0, 3.68, -1.1277356, 1.72, 0, -0.16009808, 1.72, 3.68, -1.1277356, 0, 0.23954582, -0.08000004, 0, 3.68, -0.08000004, 1.72, 0.23954582, -0.08000004, 1.72, 3.68, -0.08000004)
 
 [node name="kitchenFridge" instance=ExtResource("1_llmst")]
 
-[node name="kitchenFridge(Clone)" parent="." index="0"]
-visible = false
+[node name="Station" type="Node" parent="." index="0" node_paths=PackedStringArray("click_area", "menu_position")]
+script = ExtResource("2_aj62v")
+click_area = NodePath("../Area3D")
+menu_position = NodePath("../Marker3D")
+metadata/_custom_type_script = "uid://b77ix8y1m25v7"
 
-[node name="Area3D" type="Area3D" parent="." index="1"]
+[node name="kitchenFridge(Clone)" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0, 0.5)
+
+[node name="Area3D" type="Area3D" parent="." index="2"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0, 0.5)
 shape = SubResource("ConvexPolygonShape3D_llmst")
 
-[node name="GUI" type="MeshInstance3D" parent="." index="2"]
+[node name="Marker3D" type="Marker3D" parent="." index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
-mesh = SubResource("QuadMesh_6uc0x")
-
-[node name="SubViewport" type="SubViewport" parent="GUI" index="0"]
-transparent_bg = true
-
-[node name="Button" type="Button" parent="GUI/SubViewport" index="0"]
-offset_right = 8.0
-offset_bottom = 8.0
-text = "llll
-"
