@@ -1,3 +1,5 @@
+Sprite3D
+AnimationPlayer
 CanvasLayer
 Marker3D
 CollisionShape3D
@@ -11,5 +13,3 @@ Button
 SubViewport
 MeshInstance3D
 NavigationRegion3D
-Node3D
-DirectionalLight3D

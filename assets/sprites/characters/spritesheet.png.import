@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwhdmaggncbxj"
-path.s3tc="res://.godot/imported/cat-waiter-back.png-c37be04183b79001e818f0020ff50d34.s3tc.ctex"
+uid="uid://kqbp34xjpdw1"
+path.s3tc="res://.godot/imported/spritesheet.png-45ef5e2d575ebed61097eee04874839c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/sprites/characters/cat-waiter-back.png"
-dest_files=["res://.godot/imported/cat-waiter-back.png-c37be04183b79001e818f0020ff50d34.s3tc.ctex"]
+source_file="res://assets/sprites/characters/spritesheet.png"
+dest_files=["res://.godot/imported/spritesheet.png-45ef5e2d575ebed61097eee04874839c.s3tc.ctex"]
 
 [params]
 
