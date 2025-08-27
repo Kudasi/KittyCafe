@@ -18,3 +18,7 @@ config/icon="res://assets/icon.svg"
 [autoload]
 
 GlobalDependencies="*res://scripts/global_dependencies.gd"
+
+[global_group]
+
+navigation_mesh=""
