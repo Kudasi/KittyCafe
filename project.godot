@@ -19,6 +19,18 @@ config/icon="res://assets/icon.svg"
 
 GlobalDependencies="*res://scripts/global_dependencies.gd"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_state_charts/plugin.cfg")
+
 [global_group]
 
 navigation_mesh=""
+
+[layer_names]
+
+3d_physics/layer_1="Floor"
+3d_physics/layer_2="Walls"
+3d_physics/layer_3="Furniture"
+3d_physics/layer_4="Doors"
+3d_physics/layer_5="Cats"

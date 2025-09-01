@@ -1,3 +1,6 @@
-res://scenes/orange_cat.tscn
-res://scenes/cat.gd
 res://scenes/main.tscn
+res://scenes/customer_manager.gd
+res://scenes/customer.tscn
+res://scenes/furniture/door_blue.tscn
+res://scenes/waiter.tscn
+res://scenes/customer.gd

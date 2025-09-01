@@ -1,9 +1,12 @@
-[gd_scene load_steps=26 format=3 uid="uid://dndk05iyu5bm1"]
+[gd_scene load_steps=29 format=3 uid="uid://c8sagwvmjr63r"]
 
-[ext_resource type="Script" uid="uid://lbo5bhafrd5g" path="res://scenes/cat.gd" id="1_ooo8l"]
-[ext_resource type="Texture2D" uid="uid://kqbp34xjpdw1" path="res://assets/sprites/characters/spritesheet.png" id="2_61tnv"]
+[ext_resource type="Script" uid="uid://djwpysw0x4b6r" path="res://scenes/customer.gd" id="1_rjbu2"]
+[ext_resource type="Texture2D" uid="uid://c3va56bf6vikb" path="res://assets/sprites/characters/cat-black-front.png" id="2_846g6"]
+[ext_resource type="Script" uid="uid://couw105c3bde4" path="res://addons/godot_state_charts/state_chart.gd" id="2_qqxhk"]
+[ext_resource type="Script" uid="uid://jk2jm1g6q853" path="res://addons/godot_state_charts/compound_state.gd" id="3_846g6"]
+[ext_resource type="Script" uid="uid://cytafq8i1y8qm" path="res://addons/godot_state_charts/atomic_state.gd" id="4_qj8gj"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_ooo8l"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_fx2s6"]
 
 [sub_resource type="Animation" id="Animation_0102f"]
 length = 0.001
@@ -229,26 +232,26 @@ _data = {
 &"walking_right": SubResource("Animation_4ot6f")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rgsob"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ktfjk"]
 animation = &"idle_front"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1q1bs"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xss0h"]
 animation = &"idle_right"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ovnop"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8qg4y"]
 animation = &"idle_left"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ivre8"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rjbu2"]
 animation = &"idle_back"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_vig5c"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_rgsob")
+blend_point_0/node = SubResource("AnimationNodeAnimation_ktfjk")
 blend_point_0/pos = Vector2(0, 1)
-blend_point_1/node = SubResource("AnimationNodeAnimation_1q1bs")
+blend_point_1/node = SubResource("AnimationNodeAnimation_xss0h")
 blend_point_1/pos = Vector2(1, 0)
-blend_point_2/node = SubResource("AnimationNodeAnimation_ovnop")
+blend_point_2/node = SubResource("AnimationNodeAnimation_8qg4y")
 blend_point_2/pos = Vector2(-1, 0)
-blend_point_3/node = SubResource("AnimationNodeAnimation_ivre8")
+blend_point_3/node = SubResource("AnimationNodeAnimation_rjbu2")
 blend_point_3/pos = Vector2(0, -1)
 blend_mode = 1
 sync = true
@@ -263,32 +266,31 @@ input_1/auto_advance = false
 input_1/break_loop_at_end = false
 input_1/reset = true
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0ydbn"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qqxhk"]
 animation = &"walking_front"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ooo8l"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_846g6"]
 animation = &"walking_left"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vig5c"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qj8gj"]
 animation = &"walking_back"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wptvd"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_w2wat"]
 animation = &"walking_right"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_xck26"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_0ydbn")
+blend_point_0/node = SubResource("AnimationNodeAnimation_qqxhk")
 blend_point_0/pos = Vector2(0, 1)
-blend_point_1/node = SubResource("AnimationNodeAnimation_ooo8l")
+blend_point_1/node = SubResource("AnimationNodeAnimation_846g6")
 blend_point_1/pos = Vector2(-1, 0)
-blend_point_2/node = SubResource("AnimationNodeAnimation_vig5c")
+blend_point_2/node = SubResource("AnimationNodeAnimation_qj8gj")
 blend_point_2/pos = Vector2(0, -0.90000004)
-blend_point_3/node = SubResource("AnimationNodeAnimation_wptvd")
+blend_point_3/node = SubResource("AnimationNodeAnimation_w2wat")
 blend_point_3/pos = Vector2(1, 0)
 blend_mode = 1
 sync = true
 
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_wptvd"]
-graph_offset = Vector2(-82.62891, -118.82031)
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_pk6lr"]
 nodes/output/position = Vector2(680, -40)
 nodes/Idle/node = SubResource("AnimationNodeBlendSpace2D_vig5c")
 nodes/Idle/position = Vector2(180, 80)
@@ -298,19 +300,20 @@ nodes/Transition/node = SubResource("AnimationNodeTransition_61tnv")
 nodes/Transition/position = Vector2(420, -40)
 node_connections = [&"output", 0, &"Transition", &"Transition", 0, &"Walking", &"Transition", 1, &"Idle"]
 
-[node name="Waiter" type="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, 0)
-script = ExtResource("1_ooo8l")
+[node name="Customer" type="CharacterBody3D"]
+collision_layer = 16
+collision_mask = 7
+script = ExtResource("1_rjbu2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.18, 0)
-shape = SubResource("SphereShape3D_ooo8l")
+shape = SubResource("SphereShape3D_fx2s6")
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
+active = false
 libraries = {
 &"": SubResource("AnimationLibrary_v6sy1")
 }
-tree_root = SubResource("AnimationNodeBlendTree_wptvd")
+tree_root = SubResource("AnimationNodeBlendTree_pk6lr")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Idle/blend_position = Vector2(0, 0)
 parameters/Walking/blend_position = Vector2(0, 0)
@@ -319,7 +322,6 @@ parameters/Transition/transition_request = ""
 parameters/Transition/current_index = 1
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-debug_enabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -327,10 +329,33 @@ libraries = {
 }
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 pixel_size = 0.1
 billboard = 2
 texture_filter = 0
-texture = ExtResource("2_61tnv")
+texture = ExtResource("2_846g6")
 hframes = 4
-vframes = 6
-frame = 9
+vframes = 2
+
+[node name="StateChart" type="Node" parent="."]
+script = ExtResource("2_qqxhk")
+metadata/_custom_type_script = "uid://couw105c3bde4"
+
+[node name="Root" type="Node" parent="StateChart"]
+script = ExtResource("3_846g6")
+initial_state = NodePath("WaitingInQueue")
+metadata/_custom_type_script = "uid://jk2jm1g6q853"
+
+[node name="WaitingInQueue" type="Node" parent="StateChart/Root"]
+script = ExtResource("4_qj8gj")
+
+[node name="WaitingForOrder" type="Node" parent="StateChart/Root"]
+script = ExtResource("4_qj8gj")
+
+[node name="Eating" type="Node" parent="StateChart/Root"]
+script = ExtResource("4_qj8gj")
+
+[node name="Leaving" type="Node" parent="StateChart/Root"]
+script = ExtResource("4_qj8gj")
+
+[connection signal="target_reached" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_target_reached"]

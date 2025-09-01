@@ -48,6 +48,8 @@ _subresources={
 "nodes": {
 "PATH:wall_window_closed": {
 "generate/physics": true,
+"physics/layer": 2,
+"physics/mask": 16,
 "physics/shape_type": 1
 }
 }

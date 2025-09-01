@@ -48,6 +48,7 @@ _subresources={
 "nodes": {
 "PATH:floor_kitchen": {
 "generate/physics": true,
+"physics/mask": 16,
 "physics/shape_type": 1
 }
 }

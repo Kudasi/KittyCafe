@@ -44,6 +44,13 @@ _subresources={
 "use_external/fallback_path": "",
 "use_external/path": "uid://0xdf8w1evncj"
 }
+},
+"nodes": {
+"PATH:table_round_B": {
+"generate/physics": true,
+"physics/layer": 4,
+"physics/mask": 16
+}
 }
 }
 gltf/naming_version=1

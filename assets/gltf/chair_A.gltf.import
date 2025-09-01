@@ -48,6 +48,8 @@ _subresources={
 "nodes": {
 "PATH:chair_A": {
 "generate/physics": true,
+"physics/layer": 4,
+"physics/mask": 16,
 "physics/shape_type": 1
 }
 }
